@@ -19,3 +19,11 @@ span.number, span.suit{
     text-align:center;
     padding-top:8px;
 }
+
+#y {
+  color: red;
+}
+
+#t {
+  color: blue;
+}

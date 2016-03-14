@@ -5,17 +5,57 @@
 		<link rel="stylesheet" type="text/css" href="cards.css">
 	</head>
 	<body>
-  <div>
+
+  <div id='y'>
     <p >Your cards</p>
-    <p class="yourfirst"></p>
-    <p class="yoursecond"></p>
   </div>
 
-  <p>Their cards</p>
-  <p class="theirfirst"></p>
-  <p class="theirsecond"></p>
-
+  <div id='t'>
+    <p>Their cards</p>
   </div>
-		<script src="cards.js"></script>
-	</body>
+
+	<div id='od'>
+    <p>od's cards</p>
+  </div>
+
+	<div id='op'>
+		<p>op's cards</p>
+	</div>
+
+
+
+
+  <script src='shuffle.js'></script>
+
+  </script>
+
+  <script>
+
+  window.onload = ()=> {
+
+    var p1 = []
+		var p2 = []
+		var p3 = []
+		var p4 = []
+
+		var players = [p1, p2, p3, p4]
+
+    var shuffled = shuffle(deck()).map( i => {
+      var div = document.createElement('div')
+      div.innerHTML = '' + i.name + i.suit
+      return div
+    })
+    shuffled.map( (i, n) => {
+			players[n % 4].push(i)
+    })
+
+		p1.map( i => document.querySelector('#y').appendChild(i))
+		p2.map( i => document.querySelector('#t').appendChild(i))
+		p3.map( i => document.querySelector('#od').appendChild(i))
+		p4.map( i => document.querySelector('#op').appendChild(i))
+  }
+  </script>
+
+
+  </body>
 </html>

@@ -18,4 +18,43 @@ function deck() {
 }
 
 var myDeck = new deck();
-console.log(myDeck);
+//console.log(myDeck);
+
+window.onload = function() {
+  for (var i = 0; i < myDeck.length; i++) {
+    div = document.createElement('div');
+    div.className = 'card';
+
+    if (myDeck[i].suit == 'Diamonds') {
+      var ascii_char = '&#9830';
+    } else {
+      var ascii_char = '&' + myDeck[i].suit.toLowerCase() + ';';
+     }
+    div.innerHTML = '' + myDeck[i].name + '' + ascii_char + '';
+    document.body.appendChild(div);
+
+  }
+}
+
+function shuffle(o) {
+	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+};
+
+myDeck = shuffle(myDeck);
+
+var yf = document.querySelector('.yourfirst')
+yf = myDeck[0];
+console.log(yf);
+
+var ys = document.querySelector('.yoursecond')
+ys = myDeck[2];
+console.log(ys);
+
+var tf = document.querySelector('.theirfirst')
+tf = myDeck[1];
+console.log(tf);
+
+var ts = document.querySelector('.theirsecond')
+ts = myDeck[3];
+console.log(ts);

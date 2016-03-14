@@ -1,0 +1,21 @@
+.card{
+    width:100px;
+    height:150px;
+    border:1px solid #151718;
+    float:left;
+    margin-right:5px;
+    margin-bottom:5px;
+    border-radius:2px;
+    font-family:courier;
+    cursor:pointer;
+    font-size: 50px;
+    color: #fff;
+    background-color: black;
+}
+
+span.number, span.suit{
+    width:100%;
+    display:block;
+    text-align:center;
+    padding-top:8px;
+}
